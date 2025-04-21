@@ -21,7 +21,7 @@
     }
 
     body {
-      background-image: url("./src/thumb-1920-1010066.jpg");
+      background-color:#ffffff;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -48,8 +48,7 @@
     .sidebar {
       position: fixed;
       height: 100vh;
-      background-color: var(--accent-color);
-      color: #fff;
+      color: #7b7b7b;
       padding: 40px 20px;
       display: flex;
       flex-direction: column;
@@ -96,7 +95,7 @@
     }
 
     .sidebar a {
-      color: white;
+      color: rgb(105, 105, 105);
       text-decoration: none;
       font-size: 16px;
       transition: color 0.3s ease;
@@ -109,8 +108,8 @@
     /* Clock styles */
     .clock {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 5px;
+      right: 600px;
       padding: 15px 25px;
       border-radius: 15px;
       background: linear-gradient(145deg, #4f46e5, #6a5acd);
@@ -143,7 +142,7 @@
     .dashboard {
       background: var(--bg-dark);
       border-radius: 30px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(75, 67, 67, 0.1);
       overflow: hidden;
       padding: 30px;
       margin-top: 80px;
@@ -157,7 +156,8 @@
     .dashboard:hover {
       transform: scale(1.02);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      background-color: #424242;
+      background-color: #85bad3;
+      transform: scale(1.35);
     }
 
     @keyframes crazyEnter {
@@ -279,6 +279,9 @@
       color: var(--text-light);
       text-decoration: none;
     }
+    .Linkedin a:hover{
+      color: #4f46e5;
+    }
 
     .Tryhackme-img {
       max-width: 100%;
@@ -291,25 +294,8 @@
       transform: scale(1.10);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
-
-    /* Trophy animation container */
-    .trophy-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1010;
-      width: 250px;
-      height: 250px;
-    }
-
-    @media (max-width: 767px) {
-      .trophy-container {
-        width: 150px;
-        height: 150px;
-        top: auto;
-        bottom: 80px;
-        right: 10px;
-      }
+    .Tryhackme a:hover{
+      color: #4f46e5;
     }
   </style>
 </head>
@@ -452,18 +438,6 @@
 
       // Try to autoplay as soon as the page loads
       tryPlayAudio();
-
-      // Trophy animation with responsive positioning
-      setTimeout(() => {
-        const trophyContainer = document.getElementById('trophy-container');
-        const trophy = document.createElement('lottie-player');
-        trophy.setAttribute('src', 'https://assets9.lottiefiles.com/packages/lf20_touohxv0.json');
-        trophy.setAttribute('background', 'transparent');
-        trophy.setAttribute('speed', '1');
-        trophy.setAttribute('style', 'width: 100%; height: 100%;');
-        trophy.setAttribute('autoplay', '');
-        trophyContainer.appendChild(trophy);
-      }, 1800);
 
       // Clock logic
       const clockEl = document.getElementById('clock');
